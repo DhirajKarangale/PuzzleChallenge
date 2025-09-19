@@ -61,7 +61,7 @@ const Maintenance = () => {
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4, duration: 0.6 }}
-                        className="text-size-sm text-clr-neutral-light-gray mb-5"
+                        className="text-size-sm text-clr-primary-teal-2 mb-5"
                     >
                         {message.subtitle}
                     </motion.p>
@@ -71,7 +71,7 @@ const Maintenance = () => {
                         whileTap={!loading ? { scale: 0.95 } : {}}
                         disabled={loading}
                         onClick={handleRetry}
-                        className={`btn-primary inline-flex items-center gap-2 transition ${loading
+                        className={`btn-primary bg-clr-neutral-light-gray text-clr-primary-teal inline-flex items-center gap-2 transition ${loading
                             ? "opacity-50 cursor-not-allowed"
                             : "hover:brightness-110"
                             }`}

@@ -28,7 +28,6 @@ function App() {
 
         <Routes>
           <Route path={routeAuth} element={<Auth />} />
-          <Route path={routeMaintenance} element={<Maintenance />} />
 
           <Route element={<LayoutNavbar />}>
             <Route path={routeHome} element={<Home />} />
@@ -36,6 +35,7 @@ function App() {
             <Route path={routeUser} element={<User />} />
             <Route path={routeAbout} element={<About />} />
           </Route>
+          <Route path={routeMaintenance} element={<Maintenance />} />
           <Route path={routePaymentSuccess} element={<PaymentSuccess />} />
           <Route path={routePaymentFail} element={<PaymentFail />} />
           <Route path="*" element={<NotFound />} />

@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useAppSelector } from '../../redux/hookStore';
+import { useNavigate } from 'react-router-dom';
+import { routePaymentFail } from "../../utils/Routes";
+
+import { urlPayment } from "../../api/APIs";
+import { postRequest } from "../../api/APIManager";
 
 const fadeIn = {
     hidden: { opacity: 0, y: 10 },
@@ -8,10 +13,24 @@ const fadeIn = {
 };
 
 function Home() {
+    const navigate = useNavigate();
     const reduxUser = useAppSelector(state => state.user);
     const [consentChecked, setConsentChecked] = useState<boolean>(false);
 
-    function Pay() {
+    async function Pay() {
+        try {
+            const id = 'price_1S9AVGHqi1sgHiLWZ3PvnZaa';
+            const body = JSON.stringify({ id });
+            const { data } = await postRequest<{ url: string }>(urlPayment, body);
+            if (data?.url) {
+                window.location.href = data.url;
+            } else {
+                navigate(routePaymentFail);
+            }
+
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     return (

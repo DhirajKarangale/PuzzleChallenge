@@ -110,5 +110,12 @@
         "No updates = no applause.",
         "Try again when you're ready.",
         "Nothing to update = no fun."
+    ],
+    "paymentFail": [
+        "Payment tripped and fell. Try again!",
+        "Card said nope. Try another?",
+        "Oops! Your money's still safe.",
+        "Transaction failed. Retry, hero!",
+        "Bank blocked the vibe. Try again!"
     ]
 }
