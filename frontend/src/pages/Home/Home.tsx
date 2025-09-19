@@ -16,7 +16,7 @@ function Home() {
 
     return (
         <motion.div
-            className="w-full min-h-screen flex items-center justify-center bg-clr-neutral-light-gray p-4"
+            className="w-full h-full flex items-center justify-center bg-clr-neutral-light-gray p-4"
             initial="hidden"
             animate="visible"
             variants={fadeIn}

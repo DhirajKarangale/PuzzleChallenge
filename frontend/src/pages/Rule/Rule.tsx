@@ -64,7 +64,7 @@ function Rules() {
                     </p>
                 </section>
 
-                <footer className="flex justify-center gap-6 mt-6">
+                <footer className="grid grid-cols-3 sm:flex justify-center gap-6 mt-6">
                     {socialLinks.map(({ Icon, link, title }) => (
                         <SocialIcon key={title} Icon={Icon} link={link} title={title} />
                     ))}

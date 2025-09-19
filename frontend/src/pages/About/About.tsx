@@ -18,7 +18,7 @@ const socialLinks = [
 function About() {
     return (
         <motion.div
-            className="w-full min-h-screen flex items-center justify-center bg-clr-neutral-light-gray p-4"
+            className="w-full h-full flex items-center justify-center bg-clr-neutral-light-gray p-4"
             initial="hidden"
             animate="visible"
             variants={fadeIn}
@@ -33,7 +33,7 @@ function About() {
                     Full Stack Developer with 1 year of experience specializing in the MERN stack. Proficient in modern React (Hooks, Redux Toolkit), backend development with Node.js, and secure authentication using JWT. Experienced in both NoSQL and relational databases, including PostgreSQL, with a strong focus on data modeling and API security. Skilled in building responsive UI/UX, optimizing performance, and delivering scalable end-to-end products. Contributed to apps with 160K+ downloads on the Play Store. HackWithInfy Finalist passionate about creating impactful, user-centric solutions.
                 </p>
 
-                <div className="flex justify-center gap-6 mt-4">
+                <div className="grid grid-cols-3 sm:flex justify-center gap-6 mt-4">
                     {socialLinks.map(({ icon: Icon, url, title }) => (
                         <a
                             key={title}
