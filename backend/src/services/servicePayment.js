@@ -6,11 +6,12 @@ const stripeOBJ = require('stripe');
 require('dotenv').config();
 
 const stripe = stripeOBJ(process.env.STRIPE_SECRET_KEY);
+const FRONTEND = process.env.FRONTEND;
 
-async function Payment(priceId) {
+async function Payment(priceId, userId) {
     try {
         const session = await stripe.checkout.sessions.create({
-            mode: 'payment', 
+            mode: 'payment',
             payment_method_types: ['card'],
             line_items: [
                 {
@@ -18,8 +19,9 @@ async function Payment(priceId) {
                     quantity: 1,
                 }
             ],
-            success_url: 'http://localhost:5173/paymentsuccess',
-            cancel_url: 'http://localhost:5173/paymentfail',
+            success_url: `${FRONTEND}/paymentsuccess`,
+            cancel_url: `${FRONTEND}/paymentfail`,
+            metadata: { userId }
         });
 
         return { url: session.url };

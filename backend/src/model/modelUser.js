@@ -32,4 +32,12 @@ async function UpdateUser(fields, index, values) {
     return result.rows[0];
 }
 
-module.exports = { CreateUser, GetUser, GetUserByEmail, GetUserByUsername, UpdateUser };
+async function IncrementEntries(userId) {
+    const result = await db.query(
+        'UPDATE users SET entriescount = COALESCE(entriescount, 0) + 1 WHERE id = $1 RETURNING *;',
+        [userId]
+    );
+    return result.rows[0];
+}
+
+module.exports = { CreateUser, GetUser, GetUserByEmail, GetUserByUsername, UpdateUser, IncrementEntries };

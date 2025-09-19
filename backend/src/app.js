@@ -3,6 +3,7 @@ const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
 const router = require('./routes/router');
+const webhook = require('./routes/webhook');
 
 require('dotenv').config();
 
@@ -20,6 +21,7 @@ app.use(cors({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(router);
+app.use('/webhook', webhookRouter);
 
 (async () => {
     try {
