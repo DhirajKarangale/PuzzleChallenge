@@ -3,4 +3,7 @@ export const routeAuth = '/auth';
 export const routeUser = '/user';
 export const routeRule = '/rule';
 export const routeAbout = '/about';
+export const routeNotFound = '/notfound';
+export const routePaymentFail = '/paymentfail';
+export const routePaymentSuccess = '/paymentsuccess';
 export const routeMaintenance = '/maintenance';
