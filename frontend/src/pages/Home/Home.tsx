@@ -28,7 +28,7 @@ function Home() {
                 </h1>
 
                 <p className="text-center text-lg sm:text-xl font-medium">
-                    Entries: {reduxUser?.entriesCount || 0}
+                    Entries: {reduxUser?.entriescount || 0}
                 </p>
 
                 <div className="flex items-start gap-3">
