@@ -11,15 +11,19 @@
     --button-text: white;
     --button-border: 2px solid var(--color-accent-gold);
 
-    --primary-font-size: 18px;
+    --font-size-xl: 32px;
+    --font-size-lg: 24px;
+    --font-size-base: 16px;
+    --font-size-sm: 14px;
+    --font-size-xs: 12px;
 }
 
 @layer base {
     body {
         font-family: var(--font-body);
-        font-size: var(--primary-font-size);
-        color: var(--color-primary-teal);
-        background-color: var(--color-neutral-ivory);
+        font-size: var(--font-size-base);
+        color: var(--color-clr-primary-teal);
+        background-color: var(--color-clr-neutral-light-gray);
     }
 
     h1,
@@ -63,5 +67,9 @@
 }
 
 @theme {
-    --text-size-primary: var(--primary-font-size);
+    --text-size-xl: var(--font-size-xl);
+    --text-size-lg: var(--font-size-lg);
+    --text-size-base: var(--font-size-base);
+    --text-size-sm: var(--font-size-sm);
+    --text-size-xs: var(--font-size-xs);
 }

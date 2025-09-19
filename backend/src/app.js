@@ -2,10 +2,11 @@ const cors = require('cors');
 const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
+const router = require('./routes/router');
 
 require('dotenv').config();
 
-const PORT = 1000;
+const PORT = process.env.PORT;
 const app = express();
 const server = http.createServer(app);
 
@@ -18,10 +19,7 @@ app.use(cors({
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-app.get('/health', (req, res) => {
-    res.send("Server is up and running");
-});
+app.use(router);
 
 (async () => {
     try {
