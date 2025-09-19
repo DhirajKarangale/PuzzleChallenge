@@ -23,7 +23,7 @@ function Auth() {
     const navigate = useNavigate();
 
     const [isUpdateUser, setIsUpdateUser] = useState<boolean>(false);
-    const [currScreen, setCurrScreen] = useState<string>('User');
+    const [currScreen, setCurrScreen] = useState<string>('Signup');
 
     function getCssVar(variable: string) {
         return getComputedStyle(document.documentElement)

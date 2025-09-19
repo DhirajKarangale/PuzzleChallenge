@@ -6,8 +6,8 @@ import { routeHome, routeUser, routeRule } from '../utils/Routes';
 
 const navItems = [
     { name: 'Home', path: routeHome, icon: <Home size={20} /> },
-    { name: 'User', path: routeUser, icon: <User size={20} /> },
     { name: 'Rule', path: routeRule, icon: <Info size={20} /> },
+    { name: 'User', path: routeUser, icon: <User size={20} /> },
 ];
 
 function Navbar() {
