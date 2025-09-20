@@ -1,10 +1,11 @@
-// routes/webhook.js
 const express = require('express');
 const router = express.Router();
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const modelUser = require('../model/modelUser');
 
-router.post('/', express.raw({ type: 'application/json' }), async (req, res) => {
+router.post('/paymentsuccess', express.raw({ type: 'application/json' }), async (req, res) => {
+    console.log('------------ Webhook paymentsuccess');
+    
     const sig = req.headers['stripe-signature'];
 
     let event;
