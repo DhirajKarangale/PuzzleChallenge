@@ -178,3 +178,20 @@ ZIP: Any 5 digits
 5. Open a Pull Request
 
 ---
+
+## Handover Instructions
+
+### Loading Puzzles
+Puzzles can be loaded into the `puzzles` table with fields:
+- `question`  
+- `options`  
+- `correct_answer`  
+- `points`
+
+### Contest Entries
+Users are stored in the `users` table (`email`, `entriesCount`).  
+After a successful Stripe payment, `entriesCount` is incremented dynamically using the backend API.
+
+### Stripe Success / Cancel URLs
+- **Success URL:** `/paymentsuccess`  
+- **Cancel URL:** `/paymentfail`
