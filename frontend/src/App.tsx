@@ -34,11 +34,11 @@ function App() {
             <Route path={routeRule} element={<Rule />} />
             <Route path={routeUser} element={<User />} />
             <Route path={routeAbout} element={<About />} />
+            <Route path={routeMaintenance} element={<Maintenance />} />
+            <Route path={routePaymentSuccess} element={<PaymentSuccess />} />
+            <Route path={routePaymentFail} element={<PaymentFail />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
-          <Route path={routeMaintenance} element={<Maintenance />} />
-          <Route path={routePaymentSuccess} element={<PaymentSuccess />} />
-          <Route path={routePaymentFail} element={<PaymentFail />} />
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
 
