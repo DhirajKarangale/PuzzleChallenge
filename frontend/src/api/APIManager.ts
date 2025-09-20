@@ -60,7 +60,7 @@ function checkServer(errorMessage: string, isTimeout: boolean) {
     }
 
     if ((msg === 'net::ERR_CONNECTION_REFUSED' || msg === 'Network Error') && !currentPath.startsWith(routeMaintenance)) {
-        // window.location.replace(routeMaintenance);
+        window.location.replace(routeMaintenance);
     }
 }
 
@@ -77,13 +77,7 @@ const handleRequest = async <T>(promise: Promise<{ data: T }>): Promise<ApiResul
     }
 };
 
-export const getRequest = <T>(url: string) => {
-    console.log('---- Get: ', url);
-    return handleRequest<T>(axiosInstance.get(url))
-};
-export const postRequest = <T>(url: string, body?: any) => {
-    console.log('---- Post: ', url);
-    return handleRequest<T>(axiosInstance.post(url, body))
-};
+export const getRequest = <T>(url: string) => handleRequest<T>(axiosInstance.get(url));
+export const postRequest = <T>(url: string, body?: any) => handleRequest<T>(axiosInstance.post(url, body));
 export const putRequest = <T>(url: string, body?: any) => handleRequest<T>(axiosInstance.put(url, body));
 export const deleteRequest = <T>(url: string, body?: any) => handleRequest<T>(axiosInstance.delete(url, { data: body }));
