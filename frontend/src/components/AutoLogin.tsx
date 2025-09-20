@@ -12,10 +12,8 @@ function AutoLogin() {
 
     async function fetchUser() {
         if (window.location.pathname.startsWith(routeMaintenance)) return;
-        const { data, error } = await getRequest<User>(urlUser);
-        // if (data) dispatch(setUser(data));
-        console.log('---- Data: ', data);
-        console.log('---- Error: ', error);
+        const { data} = await getRequest<User>(urlUser);
+        if (data) dispatch(setUser(data));
     }
 
     useEffect(() => {
