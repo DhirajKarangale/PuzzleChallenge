@@ -60,7 +60,7 @@ function checkServer(errorMessage: string, isTimeout: boolean) {
     }
 
     if ((msg === 'net::ERR_CONNECTION_REFUSED' || msg === 'Network Error') && !currentPath.startsWith(routeMaintenance)) {
-        window.location.replace(routeMaintenance);
+        // window.location.replace(routeMaintenance);
     }
 }
 
