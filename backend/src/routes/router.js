@@ -11,7 +11,7 @@ const requestLogger = require('../utilities/requestLogger');
 
 router.use(requestLogger);
 router.use('/health', routerHealth);
-router.use('/webhook', webhook);
+// router.use('/webhook', webhook);
 router.use('/otp', routerOTP);
 router.use(jwt.ValidateToken);
 router.use('/user', routerUser);
