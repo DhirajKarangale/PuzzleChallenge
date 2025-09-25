@@ -1,4 +1,4 @@
-const axios = require("axios");
+const axios = require('axios');
 const nodemailer = require('nodemailer');
 const modelOtp = require('../model/modelOtp');
 const validator = require('../utilities/validator');
@@ -40,7 +40,6 @@ async function SendMail(email, otp, type) {
                 }
             }
         );
-
         return messagesManager.Success("otpSent");
     } catch (err) {
         console.error("Brevo error:", err.response?.data || err.message);
