@@ -1,3 +1,4 @@
+const axios = require("axios");
 const nodemailer = require('nodemailer');
 const modelOtp = require('../model/modelOtp');
 const validator = require('../utilities/validator');
@@ -21,29 +22,29 @@ function GenerateOTP(length) {
 }
 
 async function SendMail(email, otp, type) {
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: process.env.Email,
-            pass: process.env.EMAILPASS
-        }
-    });
-
     const { subject, body } = emailContent(otp, type);
 
-    const mailOptions = {
-        from: `"DK" <${process.env.Email}>`,
-        to: email,
-        subject: subject,
-        html: body,
-    };
-
     try {
-        await transporter.sendMail(mailOptions);
-        return messagesManager.Success('otpSent');
-    } catch (error) {
-        console.log('Error in sending mail');
-        throw throwError(messagesManager.Error('otpSent'), statusCode.SERVICE_UNAVAILABLE);
+        const res = await axios.post(
+            "https://api.brevo.com/v3/smtp/email",
+            {
+                sender: { name: "DK", email: process.env.Email },
+                to: [{ email }],
+                subject: subject,
+                htmlContent: body
+            },
+            {
+                headers: {
+                    "api-key": process.env.BREVO_API_KEY,
+                    "Content-Type": "application/json"
+                }
+            }
+        );
+
+        return messagesManager.Success("otpSent");
+    } catch (err) {
+        console.error("Brevo error:", err.response?.data || err.message);
+        throw throwError(messagesManager.Error("otpSent"), statusCode.SERVICE_UNAVAILABLE);
     }
 }
 
@@ -71,7 +72,7 @@ async function VerifyOtp(email, otp) {
 
     const user = await serviceUser.GetOrCreateUserByEmail(email);
     const token = jwt.GenerateToken(user);
-    
+
     return { user, token }
 }
 
