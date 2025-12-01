@@ -69,25 +69,27 @@ puzzle-challenge/
 
 ---
 
-## 📸 Screenshots
+## 📸 Preview
+
+![Fuse Demo](/frontend/public/preview/PuzzleChallenge.gif)
 
 ### Authentication Flow
 
 | Email Input                                             | OTP Verification                                    | User Profile                                 |
 | ------------------------------------------------------- | --------------------------------------------------- | -------------------------------------------- |
-| ![Auth Email](frontend/public/Screenshot/AuthEmail.png) | ![Auth OTP](frontend/public/Screenshot/AuthOTP.png) | ![User](frontend/public/Screenshot/User.png) |
+| ![Auth Email](frontend/public/preview/AuthEmail.png) | ![Auth OTP](frontend/public/preview/AuthOTP.png) | ![User](frontend/public/preview/User.png) |
 
 ### Payment Flow
 
 | Pay Page                                   | Stripe Checkout                                         | Success                                                           |
 | ------------------------------------------ | ------------------------------------------------------- | ----------------------------------------------------------------- |
-| ![Pay](frontend/public/Screenshot/Pay.png) | ![Stripe](frontend/public/Screenshot/StripePayment.png) | ![Payment Success](frontend/public/Screenshot/PaymentSuccess.png) |
+| ![Pay](frontend/public/preview/Pay.png) | ![Stripe](frontend/public/preview/StripePayment.png) | ![Payment Success](frontend/public/preview/PaymentSuccess.png) |
 
 ### Other Screens
 
 | Home                                         | Rule                                         | About                                          | After Payment                                                 |
 | -------------------------------------------- | -------------------------------------------- | ---------------------------------------------- | ------------------------------------------------------------- |
-| ![Home](frontend/public/Screenshot/Home.png) | ![Rule](frontend/public/Screenshot/Rule.png) | ![About](frontend/public/Screenshot/About.png) | ![After Payment](frontend/public/Screenshot/AfterPayment.png) |
+| ![Home](frontend/public/preview/Home.png) | ![Rule](frontend/public/preview/Rule.png) | ![About](frontend/public/preview/About.png) | ![After Payment](frontend/public/preview/AfterPayment.png) |
 
 ---
 
